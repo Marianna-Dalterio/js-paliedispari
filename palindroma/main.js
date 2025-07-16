@@ -1,30 +1,23 @@
 //Chiedere all’utente di inserire una parola
-let parolaUtente = prompt("Inserisci una parola")
+let parolaUtente = prompt("Inserisci una parola").toLowerCase
 //Creare una funzione per capire se la parola inserita è palindroma
-
-//ciclo for per analizzare caratteri di una parola da sx-dx e viceversa
-let parolaSxDx = []
-for (let i = 0; i < parolaUtente.length; i++) {
-    caratteriSxDx = parolaUtente[i]
-    //console.log(caratteriSxDx)
-}
-let parolaDxSx = []
-for (let i = parolaUtente.length - 1; i >= 0; i--) {
-    caratteriDxSx = parolaUtente[i]
-    //console.log(caratteriDxSx)
-}
-
-//condizione per confronto
-let parolaPalindroma = caratteriSxDx === caratteriDxSx
-if (parolaPalindroma) {
-    console.log("La tua parola E' palindroma")
-} else {
-    console.log("La tua parola NON è palindroma")
-}
-
-//racchiudo in una funzione
 function parola_palindroma(parolaUtente) {
-    const result = parolaPalindroma
-    console.log(result)
-    return result
+    //ciclo for per analizzare la parola al contrario 
+    let parolaInvertita = ""
+    for (let i = parolaUtente.length - 1; i >= 0; i--) {
+        parolaInvertita += parolaUtente[i]
+    }
+    //parolaInvertita += parola[i] → aggiunge un carattere alla volta alla nuova stringa.
+    //condizione per confronto
+
+    if (parolaInvertita === parolaUtente) {
+        console.log("La tua parola E' palindroma")
+        return true
+    } else {
+        console.log("La tua parola NON è palindroma")
+        return false
+    }
+
 }
+//richiam la funzione 
+parola_palindroma(parolaUtente)
