@@ -6,12 +6,12 @@ let parolaUtente = prompt("Inserisci una parola")
 let parolaSxDx = []
 for (let i = 0; i < parolaUtente.length; i++) {
     caratteriSxDx = parolaUtente[i]
-    console.log(caratteriSxDx)
+    //console.log(caratteriSxDx)
 }
 let parolaDxSx = []
 for (let i = parolaUtente.length - 1; i >= 0; i--) {
     caratteriDxSx = parolaUtente[i]
-    console.log(caratteriDxSx)
+    //console.log(caratteriDxSx)
 }
 
 //condizione per confronto
@@ -20,4 +20,11 @@ if (parolaPalindroma) {
     console.log("La tua parola E' palindroma")
 } else {
     console.log("La tua parola NON è palindroma")
+}
+
+//racchiudo in una funzione
+function parola_palindroma(parolaUtente) {
+    const result = parolaPalindroma
+    console.log(result)
+    return result
 }
