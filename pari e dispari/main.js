@@ -1,6 +1,8 @@
 //L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-let UserEvenOrOdd = prompt("Scegli pari o dispari")
+let UserEvenOrOdd = prompt("Scegli pari o dispari").toLocaleLowerCase();
+console.log("La tua scelta", UserEvenOrOdd)
 let numeroUtente = Number(prompt("Inserisci un numero compreso tra 1 e 5"))
+console.log("Il tuo numero", numeroUtente)
 //Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -20,3 +22,8 @@ function IsSumEvenOrOdd(sumNum) {
 }
 console.log(IsSumEvenOrOdd(sumNum))
 //Dichiariamo chi ha vinto.
+if (UserEvenOrOdd === sumNum) {
+    console.log("Hai vinto!")
+} else {
+    console.log("Hai perso :(")
+}
